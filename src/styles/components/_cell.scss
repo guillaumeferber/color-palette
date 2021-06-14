@@ -1,0 +1,70 @@
+.c-cell {
+    display: flex;
+    position: relative;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    border: 1px solid lightgrey;
+    z-index: 0;
+    padding-right: 1rem;
+    overflow: hidden;
+    font-weight: 500;
+    transition: all .25s ease-in;
+    &:before {
+        $border-size: .3rem;
+        position: absolute;
+        top: calc(50% - #{$border-size / 2});
+        left: -10px;
+        content: '';
+        height: 0;
+        width: 0;
+        border: $border-size solid transparent;
+        border-top-color: beige;
+        border-right-color: beige;
+        transform: rotate(45deg) translateY(-50%);
+        z-index: 1;
+        transition: left .25s ease-in-out;
+    }
+
+    &--color {
+        border-width: 0;
+    }
+    &.active,
+    &:hover {
+        &:before {
+            left: -5px;
+        }
+    }
+    &__body {
+        padding: 1.2rem 0 1.2rem 1rem;
+        text-transform: uppercase;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 100%;
+        > * { display: block; }
+        & + * { padding-right: 1.2rem; }
+    }
+
+    & + & { border-top-color: transparent; }
+    &:first-of-type {
+        border-top-left-radius: .6rem;
+        border-top-right-radius: .6rem;
+    }
+    &:last-of-type {
+        border-bottom-left-radius: .6rem;
+        border-bottom-right-radius: .6rem;
+    }
+
+    .Button {
+        opacity: 0;
+        position: absolute;
+        right: -1rem;
+        transition: all .15s ease-in .25s;
+    }
+    &:hover .Button {
+        opacity: 1;
+        position: absolute;
+        right: .5rem;
+    }
+}

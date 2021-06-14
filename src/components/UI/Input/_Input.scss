@@ -1,0 +1,125 @@
+.Input-group {
+    display: inline-block;
+    position: relative;
+}
+
+.Input {
+    --background-color: var(--color-grey-8);
+    --text-color: var(--color-grey-2);
+    --width: 100%;
+    --border-radius: .4rem;
+    --text-align: left;
+    --padding: 1.4rem 1.4rem;
+    --font-weight: 400;
+    --cursor: text;
+    --border-color: transparent;
+    --pointer-events: initial;
+    /* Chrome, Safari, Edge, Opera */
+    &::-webkit-outer-spin-button,
+    &::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+        margin: 0;
+    }
+
+    /* Firefox */
+    &[type=number] {
+        -moz-appearance: textfield;
+        width: 4.5rem;
+    }
+
+    box-sizing: content-box;
+    width: var(--width);
+    outline: none;
+    cursor: var(--cursor);
+    padding: var(--padding);
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    text-align: var(--text-align);
+    background: var(--background-color);
+    color: var(--text-color);
+    font-weight: var(--font-weight);
+    transition: all .15s ease-in;
+    pointer-events: var(--pointer-events);
+    & + label {
+        --color-label: var(--color-grey-5);
+        display: block;
+        position: absolute;
+        font-weight: var(--font-weight);
+        opacity: 0;
+        color: var(--color-label);
+        width: calc(100% - 2rem);
+        top: 1.5rem;
+        left: 1.4rem;
+        transition: all .15s ease-out 0s;
+    }
+
+    &:placeholder {
+        --font-weight: 500;
+        font-size: 1.3rem;
+        font-weight: var(--font-weight);
+    }
+
+    &:placeholder-shown + label  {
+        visibility: hidden;
+        z-index: -1;
+        font-size: 1.6rem;
+
+    }
+
+    &:not(:placeholder-shown) + label,
+    &:focus:not(:placeholder-shown) + label {
+        visibility: visible;
+        z-index: 1;
+        opacity: 1;
+        font-size: 1.2rem;
+        top: .3rem;
+    }
+
+    &:disabled,
+    &--disabled {
+        --pointer-events: none;
+        --background-color: var(--color-grey-7);
+        --cursor: not-allowed;
+        &:hover { cursor: var(--cursor); }
+    }
+
+    &--invert {
+        --pointer-events: none;
+        --width: 7.5rem;
+        --background-color: var(--color-grey-1);
+        --text-color: var(--white);
+        --text-align: right;
+        --padding: .6rem 1rem;
+        --font-weight: 500;
+        --cursor: default;
+        --border-color: var(--color-grey-3);
+    }
+
+    &:active,
+    &:focus,
+    &:invalid,
+    &--invalid,
+    &--valid  { --background-color: var(--white); }
+
+    &:active,
+    &:focus {
+        &:not(:focus) { --border-color: var(--color-blue); }
+        & + label { --color-label: var(--color-blue); }
+    }
+
+    &:invalid,
+    &--invalid {
+        --border-color: var(--color-danger);
+        &:focus {
+            & + label { --color-label: var(--color-danger); }
+        }
+    }
+
+    &--valid {
+        --border-color: var(--color-success);
+        &,
+        &:focus {
+            & + label { --color-label: var(--color-success); }
+        }
+    }
+}

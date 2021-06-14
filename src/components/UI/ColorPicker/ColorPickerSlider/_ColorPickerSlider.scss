@@ -1,0 +1,22 @@
+.ColorPickerSlider {
+    position: relative;
+    overflow: hidden;
+    height: calc(100vh - 4rem);
+    width: 5%;
+
+    &:not(.vertical) {
+        background: linear-gradient(to right, rgb(255, 0, 0) 0%, rgb(255, 255, 0) 17%, rgb(0, 255, 0) 33%, rgb(0, 255, 255) 50%, rgb(0, 0, 255) 67%, rgb(255, 0, 255) 83%, rgb(255, 0, 0) 100%);
+        position: absolute;
+        height: 6px;
+        width: 100%;
+        border-radius: 0;
+        border-top-left-radius: 4px;
+        border-bottom-left-radius: 4px;
+    }
+    canvas {
+        width: 100%;
+        overflow: hidden;
+        cursor: crosshair;
+
+    }
+}

@@ -1,0 +1,12 @@
+.ColorPaletteContainer {
+    display: flex;
+    justify-content: space-between;
+    background: var(--color-background);
+    &,
+    svg {
+        color: currentColor;
+    }
+    > * {
+        width: calc(100% - 18%*2);
+    }
+}

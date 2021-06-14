@@ -1,0 +1,4 @@
+export const ADD_PALETTE = 'ADD_PALETTE';
+export const REMOVE_PALETTE = 'REMOVE_PALETTE';
+export const SELECT_PALETTE = 'SELECT_PALETTE';
+export const SHOW_PALETTE_LIST = 'SHOW_PALETTE_LIST';

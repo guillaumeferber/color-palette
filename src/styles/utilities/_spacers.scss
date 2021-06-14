@@ -1,0 +1,59 @@
+$spaceamounts: (0: 0, xs: .5, sm: 2, md: 3, lg: 4.5, xl: 7.5); // Adjust this to include the pixel amounts you need.
+$axis-sides : (y: (top, bottom), x: (left, right, auto));
+$sides: (top, bottom, left, right); // Leave this variable alone
+
+@each $space, $amount in $spaceamounts {
+    @each $side in $sides {
+        .u-m-#{str-slice($side, 0, 1)}-#{$space} {
+            @if $amount != 0 {
+                margin-#{$side}: #{$amount}rem !important;
+            } @else {
+                margin-#{$side}: #{$amount} !important;
+            }
+        }
+
+        .u-p-#{str-slice($side, 0, 1)}-#{$space} {
+            @if $amount != 0 {
+                padding-#{$side}: #{$amount}rem !important;
+            } @else {
+                padding-#{$side}: #{$amount} !important;
+            }
+        }
+    }
+    @each $axis, $a-sides in $axis-sides {
+        @if index($list: $a-sides, $value: auto) {
+            @each $side in $sides {
+
+                @if $amount != 0 {
+                    .u-m-#{str-slice($side, 0, 1)}-#{$axis}-#{$space}-auto  {
+                        margin-#{$side}: auto !important;
+                    }
+                } @else {
+                    .u-m-#{str-slice($side, 0, 1)}-auto  {
+                        margin-#{$side}: auto !important;
+                    }
+                }
+            }
+
+        } @else {
+            .u-m-#{$axis}-#{$space}  {
+                @each $side in $sides {
+                    @if $amount != 0 {
+                        margin-#{$side}: #{$amount}rem !important;
+                    } @else {
+                        margin-#{$side}: #{$amount} !important;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// width spacers
+$widths: 25, 33, 50, 66, 75, 100;
+@each $width in $widths {
+    .u-w-#{$width} {
+        width: #{$width}% !important
+    }
+}

@@ -1,0 +1,55 @@
+.ColorPaletteColorDetailsListItem {
+    $defaultPadding: 1.2rem;
+    display: flex;
+    align-items: center;
+    align-content: space-between;
+    padding: 1rem $defaultPadding 1rem 0;
+    margin-left: $defaultPadding;
+    border-bottom: 1px solid lightgray;
+
+    &.is-lightness {
+        filter: grayscale(1);
+    }
+    &--icon {
+        svg {
+            width: 1.6rem;
+            margin-right: 1rem;
+        }
+    }
+    &--thumb {
+        margin-right: $defaultPadding;
+        margin-top: .3rem;
+        span {
+            display: inline-block;
+            height: $defaultPadding * 1.1;
+            width: $defaultPadding * 1.1;
+            border-radius: 50%;
+        }
+    }
+    &--values {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        span {
+            font-weight: 500;
+        }
+    }
+    &-bar {
+        padding-left: 1rem;
+        position: relative;
+        & > div {
+            height: 6px;
+            opacity: 0;
+            transform: translateX(0);
+            > div > div > div {
+                transform: translateX(0) translateY(-2px) !important;
+            }
+
+        }
+        &.is-visible > div {
+            animation: reveal .15s ease-in 0s 1 forwards;
+        }
+
+    }
+}

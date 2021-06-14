@@ -1,0 +1,10 @@
+.ColorPalettePicker {
+    position: relative;
+    height: calc(100vh - 4rem);
+    width: 90%;
+    canvas {
+        width: 100%;
+        cursor: crosshair;
+        overflow: hidden;
+    }
+}

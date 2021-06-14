@@ -1,0 +1,21 @@
+.Pointer {
+    position: absolute;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    top: calc(50% - (6px));
+    background: transparent;
+    border: 2.5px solid var(--white);
+    z-index: 3;
+    cursor: grab;
+
+    &.grabbing { cursor: grabbing; }
+
+    &.slider {
+        width: 120%;
+        border-radius: 3px;
+        left: -10%;
+        height: 8px;
+        cursor: grab;
+    }
+}

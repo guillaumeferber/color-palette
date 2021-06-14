@@ -1,0 +1,19 @@
+.ColorPaletteNavigation {
+    position: absolute;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    left: 50%;
+    transform: translateX(-50%);
+    overflow: hidden;
+    height: 40px;
+    &__link {
+        display: inline-block;
+        padding: 1.1rem 2.4rem;
+        &,
+        &:hover,
+        &:active {
+            text-decoration: none;
+        }
+    }
+}

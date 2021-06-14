@@ -1,0 +1,39 @@
+.c-container {
+    padding: 1rem 7vw;
+}
+.c-row {
+    display: flex;
+    width: 100%;
+    margin-left: -1.5rem;
+    margin-right: -1.5rem;
+    @include breakpoint($breakpoint-sm) {
+        flex-direction: column;
+    }
+}
+@mixin column {
+    padding-left: var(--padding-default);
+    padding-right: var(--padding-default);
+}
+
+$breakpoints: (xs: $breakpoint-xs, sm: $breakpoint-sm, md: $breakpoint-md, lg: $breakpoint-lg, xl: $breakpoint-xl); // Adjust this to include the pixel amounts you need.
+@for $i from 1 to 13 {
+    .c-col-#{$i} {
+        @include column;
+        width: calc(100% / 12 * #{$i});
+    }
+}
+
+
+@each $breakpoint, $bp-value in $breakpoints {
+    $width-type: min;
+    @if $breakpoint == xs { $width-type: max; }
+    @if $breakpoint == sm { $width-type: max; }
+    @media (#{$width-type}-width: $bp-value) {
+        @for $i from 1 to 13 {
+            .c-col-#{$breakpoint}-#{$i} {
+                @include column;
+                width: calc(100% / 12 * #{$i}) !important;
+            }
+        }
+    }
+}

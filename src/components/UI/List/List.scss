@@ -1,0 +1,20 @@
+.List {
+    display: flex;
+    li {
+        position: relative;
+        overflow: hidden;
+        z-index: 1;
+    }
+    &.row {
+        flex-direction: row;
+        li + li { margin-left: 1rem;}
+    }
+    &.column {
+        flex-direction: column;
+    }
+
+    &.unstyled {
+        list-style: none;
+    }
+
+}

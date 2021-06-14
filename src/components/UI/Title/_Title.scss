@@ -1,0 +1,19 @@
+/* Title */
+.Title {
+    position: relative;
+
+
+}
+
+.Title.decorated {
+  text-indent: 30px;
+  padding-left: 10px;
+}
+
+.Title.decorated:before {
+    position: absolute;
+    top: 0;
+    left: -30px;
+    content: '\2192';
+    display: inline-block;
+}

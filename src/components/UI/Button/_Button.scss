@@ -1,0 +1,39 @@
+.Button {
+    display: inline-block;
+    -webkit-appearance: none;
+    border: 0 none;
+    outline: none;
+    margin: 0;
+    padding: 0;
+    line-height: 1;
+    background: rgba(white, .8);
+    border-radius: .6rem;
+
+    &__body {
+        display: flex;
+        align-items: center;
+        padding: 1.2rem;
+    }
+    &.icon {
+        background: transparent;
+        border: 0 none;
+        outline: 0 none;
+        cursor: pointer;
+    }
+    &.link {
+        background: none;
+        border-radius: 0;
+        color: currentColor;
+    }
+    &__icon {
+        &--medium {
+            svg { width: 65%; }
+        }
+        &--small {
+            svg { width: 55%; }
+        }
+        &--large {
+            svg { width: 100%; }
+        }
+    }
+}

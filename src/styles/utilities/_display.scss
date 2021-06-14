@@ -1,0 +1,12 @@
+$displays: block, inline-block, inline, flex, inline-flex, table, table-cell, table-row, none;
+@each $display in $displays {
+    .u-d-#{$display} {
+        display: $display !important;
+    }
+}
+$justify-contents: flex-start, flex-end, space-around, space-between, center;
+@each $justify-content in $justify-contents {
+    .u-justify-content-#{$justify-content} {
+        justify-content: $justify-content !important;
+    }
+}

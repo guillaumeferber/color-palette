@@ -1,0 +1,36 @@
+@mixin breakpoint($size) {
+    @media screen and (max-width: $size) {
+        @content;
+    }
+}
+
+@mixin type-setting($level) {
+    font-size: type-scale($level);
+    line-height: line-height($level);
+  }
+
+  @mixin default-font-settings($font-weight) {
+    font-family: var(--font-family-sans-serif);
+    font-variation-settings: "wght" $font-weight;
+    will-change: font-variation-settings;
+    text-rendering: optimizeSpeed;
+}
+
+@mixin adjustGradient($color: #604AB0, $tintValue: 15%, $shadeValue: 10%) {
+    background: linear-gradient(
+        to right bottom,
+        mix(white, $color, $tintValue),
+        mix(white, $color, $shadeValue)
+    );
+}
+
+@mixin animate(
+        $name: reveal,
+        $duration: 1s,
+        $type: ease-out,
+        $delay: 0s,
+        $iteration-count: 1,
+        $fill-mode: none,
+        $direction: normal) {
+    animation: $name $duration $type $delay $direction $iteration-count $fill-mode;
+}

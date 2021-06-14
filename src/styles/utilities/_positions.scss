@@ -1,0 +1,18 @@
+$positions: static, relative, absolute, fixed, sticky;
+$sides: left, right;
+@each $position in $positions {
+    .u-position-#{$position} {
+        position: $position;
+    }
+}
+
+@each $side in $sides {
+    .u-float-#{$side} {
+        float: $side;
+        &:after {
+            content: '';
+            display: table;
+            clear: both;
+        }
+    }
+}

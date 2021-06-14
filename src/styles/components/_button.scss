@@ -1,0 +1,182 @@
+button.c-button,
+.c-button {
+  $blue: #10487B;
+  $red: #b30015;
+  $grey: #ddd;
+  $green: #84C954;
+  $light-grey: #ACBCC8;
+  $yellow: rgb(255, 174, 0);
+  $black: #1a1a1a;
+  $defaultLightenValue: 15%;
+  &,
+  &:link,
+  &:visited {
+      outline: none;
+      position: relative;
+      padding: 6px 12px;
+      font: 300 1rem/1.5 var(--sans-serif), Arial, Helvetica Neue, sans-serif;
+      color: var(--white);
+      text-transform: capitalize;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      svg {
+        width: 1.6rem;
+        margin-right: 1rem;
+      }
+      & > span {
+        line-height: 1;
+      }
+  }
+
+  &--icon {
+    padding: 0;
+  }
+
+  &--medium {
+    &,
+    &:link,
+    &:visited {
+      padding: .3rem .8rem;
+      font-size: 1rem;
+      line-height: 1.3;
+    }
+  }
+
+  &--large {
+    &,
+    &:link,
+    &:visited {
+      padding: .5rem 1rem;
+      font-size: 1.25rem;
+      line-height: 1.5;
+    }
+  }
+    &:hover,
+    &:focus,
+    &:active,
+    &.active {
+        outline: none;
+        text-decoration: none;
+    }
+
+    &--outline {
+      background-color: var(--white);
+      border-color: lighten($blue, $defaultLightenValue);
+      color: lighten($blue, $defaultLightenValue);
+      &:hover {
+        background-color: $blue;
+        border-color: $blue;
+        color: var(--white);
+      }
+    }
+
+    &--primary {
+      background-color: lighten($blue, $defaultLightenValue);
+      border-color: lighten($blue, $defaultLightenValue);
+      &:hover {
+        background-color: $blue;
+        border-color: $blue;
+      }
+    }
+
+    &--link {
+      background-color: transparent;
+      color: inherit;
+      box-shadow: none;
+      &:hover {
+        color: lighten($blue, $defaultLightenValue);
+        background-color: transparent;
+      }
+    }
+
+    &--secondary {
+      background-color: var(--white);
+      border-color: $grey;
+      color: inherit;
+      &:hover {
+        background-color: $grey;
+        border-color: $grey;
+      }
+    }
+
+    &--success {
+      background-color: $green;
+      border-color: $green;
+      &:hover {
+        background-color: darken($green, $defaultLightenValue);
+        border-color: darken($green, $defaultLightenValue);
+      }
+    }
+
+    &--danger {
+      background-color: lighten($red, $defaultLightenValue);
+      border-color: lighten($red, $defaultLightenValue);
+      &:hover {
+        background-color: $red;
+        border-color: $red;
+      }
+    }
+
+    &--warning {
+      background-color: lighten($yellow, $defaultLightenValue);
+      border-color:  lighten($yellow, $defaultLightenValue);
+      &:hover {
+        background-color: $yellow;
+        border-color: $yellow;
+      }
+    }
+
+    &--disabled {
+      background-color: var(--white);
+      border-color: $light-grey;
+      color: $light-grey;
+      box-shadow: none;
+      opacity: .7;
+      cursor: not-allowed;
+      pointer-events: none;
+      &:hover {
+        background-color: var(--white);
+        color: $light-grey;
+        border-color: $light-grey;
+        box-shadow: none;
+      }
+    }
+
+    &--pill {
+      outline: none;
+      border: 0 none;
+      padding: .1rem .5rem;
+      min-width: 2rem;
+      background: var(--color-grey-1);
+      color: var(--white);
+      display: inline-block;
+      text-align: center;
+      font-size: .75rem;
+      border-radius: 0;
+      .Button__body {
+        padding: 0;
+      }
+      &:active {
+        background: var(--color-grey-3);
+      }
+      svg {
+        margin: 0;
+        width: 1.2rem;
+      }
+      &:first-child {
+        border-top-left-radius: 16px;
+        border-bottom-left-radius: 16px;
+        border-right: 1px solid var(--color-grey-3);
+      }
+      &:last-child {
+        border-top-right-radius: 16px;
+        border-bottom-right-radius: 16px;
+      }
+    }
+
+
+
+}

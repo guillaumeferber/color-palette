@@ -1,0 +1,7 @@
+.Layout {
+    &:before {
+        content: '';
+        display: table;
+        clear: both;
+    }
+}

@@ -1,0 +1,46 @@
+@for $i from 1 to 7 {
+	$setting: 0;
+	@if $i > 4 {
+		$setting: 0;
+	} @else {
+		$setting: $i;
+	}
+    h#{$i},
+    .h#{$i} {
+		padding: 0;
+		@include type-setting($setting);
+        font-family: var(--font-family-sans-serif);
+		font-weight: 400;
+		margin: 0 0 #{1.2 + (1.2 / $i)}rem 0;
+    }
+}
+
+p, li, a, b, span {
+	font-family: var(--font-family-sans-serif);
+}
+
+a {
+	font-size: inherit;
+	color: inherit;
+	text-decoration: none;
+
+	&:hover {
+		text-decoration: underline;
+	}
+}
+
+select {
+	font: inherit;
+	background: hsla(0,0%,100%,.6);
+}
+
+p, li, span {
+	@include type-setting(0);
+	&:first-of-type {
+		margin-top: 0;
+	}
+
+	&:last-of-type {
+		margin-bottom: 0;
+	}
+}

@@ -1,0 +1,28 @@
+.c-header {
+    position: relative;
+    h1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span {
+            $dimension: 30rem;
+            font-size: $dimension;
+            line-height: 1.2;
+            color: var(--color-tertiary);
+            &:first-child:not(.c-cloud) {
+                margin-right: 2rem;
+            }
+            &:last-child:not(.c-cloud) {
+                margin-left: 2rem;
+            }
+            &:nth-child(2):not(.c-cloud) {
+                display: block;
+                height: $dimension;
+                width: $dimension;
+                border-radius: 50%;
+                background: var(--color-tertiary);
+            }
+        }
+
+    }
+}

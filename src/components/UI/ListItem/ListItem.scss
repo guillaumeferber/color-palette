@@ -1,0 +1,20 @@
+.ListItem {
+    --background-color: transparent;
+    --text-color: var(--color-text);
+    position: relative;
+    overflow: hidden;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    &:disabled,
+    &.disabled {
+        --background-color: #ccc;
+        --text-color: #666;
+        pointer-events: none;
+    }
+    > .active {
+        --background-color: #666;
+        --text-color: #eee;
+        background-color: var(--background-color);
+        color: var(--text-color);
+    }
+}

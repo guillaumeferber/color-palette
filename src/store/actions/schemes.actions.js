@@ -1,0 +1,3 @@
+export const SELECT_SCHEME_PAGE = 'SELECT_SCHEME_PAGE';
+export const GET_SCHEME = 'GET_SCHEME';
+export const GET_DIMENSIONS = 'GET_DIMENSIONS';
